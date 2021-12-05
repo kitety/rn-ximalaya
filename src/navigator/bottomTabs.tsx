@@ -11,6 +11,7 @@ import {
   useNavigation,
 } from '@react-navigation/core';
 import {RootStackNavigation, RootStackParamList} from '.';
+import IconFont from '@/assets/iconfont';
 
 export type BottomTabParamList = {
   Home: undefined;
@@ -50,6 +51,9 @@ const BottomTabs = () => {
         options={{
           tabBarLabel: '首页',
           tabBarActiveTintColor: '#f86442',
+          tabBarIcon: ({color, size}) => (
+            <IconFont name="icon-shouye" size={size} color={color} />
+          ),
         }}
       />
       <Tab.Screen
@@ -58,6 +62,9 @@ const BottomTabs = () => {
         options={{
           tabBarLabel: '我听',
           tabBarActiveTintColor: '#f86442',
+          tabBarIcon: ({color, size}) => (
+            <IconFont name="icon-shoucang" size={size} color={color} />
+          ),
         }}
       />
       <Tab.Screen
@@ -66,6 +73,9 @@ const BottomTabs = () => {
         options={{
           tabBarLabel: '发现',
           tabBarActiveTintColor: '#f86442',
+          tabBarIcon: ({color, size}) => (
+            <IconFont name="icon-faxian" size={size} color={color} />
+          ),
         }}
       />
       <Tab.Screen
@@ -74,6 +84,9 @@ const BottomTabs = () => {
         options={{
           tabBarLabel: '我的',
           tabBarActiveTintColor: '#f86442',
+          tabBarIcon: ({color, size}) => (
+            <IconFont name="icon-user" size={size} color={color} />
+          ),
         }}
       />
     </Tab.Navigator>
