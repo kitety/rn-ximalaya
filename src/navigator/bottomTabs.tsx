@@ -1,20 +1,21 @@
-import React from 'react';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Home from '@/pages/home';
+import IconFont from '@/assets/iconfont';
 import Account from '@/pages/account';
 import Found from '@/pages/found';
+import Home from '@/pages/home';
 import Listen from '@/pages/listen';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
   NavigationState,
   RouteProp,
   TabNavigationState,
   useNavigation,
 } from '@react-navigation/core';
+import React from 'react';
 import {RootStackNavigation, RootStackParamList} from '.';
-import IconFont from '@/assets/iconfont';
+import HomeTabs from './homeTabs';
 
 export type BottomTabParamList = {
-  Home: undefined;
+  HomeTabs: undefined;
   Listen: undefined;
   Account: undefined;
   Found: undefined;
@@ -25,7 +26,7 @@ type Route = RouteProp<RootStackParamList, 'BottomTabs'> & {
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 
 const TITLE_OBJ = {
-  Home: '首页',
+  HomeTabs: '首页',
   Listen: '我听',
   Found: '发现',
   Account: '我的',
@@ -42,12 +43,11 @@ const BottomTabs = () => {
           navigation.setOptions({
             headerTitle: TITLE_OBJ[text] || '首页',
           });
-          //
         },
       })}>
       <Tab.Screen
-        name="Home"
-        component={Home}
+        name="HomeTabs"
+        component={HomeTabs}
         options={{
           tabBarLabel: '首页',
           tabBarActiveTintColor: '#f86442',

@@ -1,4 +1,4 @@
-import React from 'react';
+import Detail from '@/pages/detail';
 import {NavigationContainer} from '@react-navigation/native';
 import {
   CardStyleInterpolators,
@@ -6,8 +6,8 @@ import {
   HeaderStyleInterpolators,
   StackNavigationProp,
 } from '@react-navigation/stack';
-import Detail from '@/pages/detail';
-import {Platform, StyleSheet} from 'react-native';
+import React from 'react';
+import {Platform, StatusBar, StyleSheet} from 'react-native';
 import BottomTabs from './bottomTabs';
 
 export type RootStackParamList = {
@@ -36,12 +36,13 @@ const Navigator = () => {
           headerTitleAlign: 'center',
           // 下面两句是统一ios和安卓的页面切换效果
           headerStyleInterpolator: HeaderStyleInterpolators.forUIKit,
-          // 卡片华东
+          // 卡片滑动
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
           // 启用手势
           gestureEnabled: true,
           // 手势滑动方向 水平
           gestureDirection: 'horizontal',
+          headerStatusBarHeight: StatusBar.currentHeight,
           // 标题栏样式
           headerStyle: {
             ...Platform.select({

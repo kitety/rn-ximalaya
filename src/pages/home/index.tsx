@@ -1,10 +1,10 @@
 import {IHomeState} from '@/models/home';
-import {RootState} from '@/models/index';
+import {RootState} from '@/models/type';
 import {RootStackNavigation} from '@/navigator/index';
 import {useNavigation} from '@react-navigation/native';
 import {DvaLoadingState} from 'dva-loading-ts';
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import {Button, Text, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
 const Home = () => {
